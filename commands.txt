@@ -1,0 +1,42 @@
+# Clonar:
+git clone git@github.com:jorgektch/streamlit-project.git
+
+# Crear entorno virtual e instalar paquetes desde requirements.txt
+python -m venv env
+
+# Activar entorno virtual en windows
+.\env\Scripts\activate
+
+pip install django
+pip install djangorestframework
+
+# Crear proyecto Django
+django-admin startproject nombre_proy_django
+
+# Crear app dentro del proyecto Django
+python manage.py startapp nombre_app_django
+
+# Preparar migraciones
+python manage.py makemigrations
+# Migrar
+python manage.py migrate
+
+# Crear superusuario
+python manage.py createsuperuser
+
+# Gestionar requerimientos
+# Freezear
+pip freeze > requirements.txt
+# Instalar
+pip install -r requirements.txt
+
+# Levantar el servidor
+python manage.py runserver 0.0.0.0:8000
+
+python manage.py runserver 192.168.1.3:8000
+
+python manage.py runserver
+
+# Generar requirements.txt
+pipreqs --encoding=utf8 --force
+
